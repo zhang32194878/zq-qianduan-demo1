@@ -31,3 +31,4 @@
     提交测试一下 (可以开启webstorm的eslint)
 6. 清空凭据 win 打开凭据 清空github凭据 (使用https协议)
 7. push到远程仓库 git push 别名 分支  (git push githubdemo master)
+    测试创建分支 git switch -c fenzhi1
