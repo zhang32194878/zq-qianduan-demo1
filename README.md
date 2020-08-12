@@ -1,0 +1,36 @@
+# zq-qianduan-demo1
+创建远程仓库流程
+1. 在github 中创建一个空仓库
+2. git init 创建一个本地仓库
+3. 给链接创建别名 git remote add xxx(githubdemo) https://github.com/zhang32194878/zq-qianduan-demo1.git
+4. 可以使用 git remote -v 查看别名
+    ///githubdemo      https://github.com/zhang32194878/zq-qianduan-demo1.git (fetch)
+    ///githubdemo      https://github.com/zhang32194878/zq-qianduan-demo1.git (push)
+5. 配置用户信息 git config --global user.name = xx ; git config --global user.email = xx
+    (进行初始化内容编写 如增加js代码检查)
+    npm init 初始化npm 创建package.json
+    npm i eslint -D
+    创建.gitignore文件 写入/node_modules 忽略lib包
+    package.json中添加启动eslint style中写入 "lint" : "eslint src"//检查src包 写入 "lint:create" : "eslint --init"
+    ------------------------------------------------------------
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint" : "eslint src",
+        "lint:create" : "eslint --init"
+      },
+    ------------------------------------------------------------
+    执行 init:create
+    下载 husky (需要先创建git仓库) 给git创建钩子 npm install husky
+    添加pre-commit必须先执行lint成功之后才可以提交
+    -----------------------------------------------------------
+    "husky": {
+        "hooks": {
+          "pre-commit": "npm run lint"
+        }
+      }
+    -----------------------------------------------------------
+    提交测试一下 (可以开启webstorm的eslint)
+6. 清空凭据 win 打开凭据 清空github凭据 (使用https协议)
+7. push到远程仓库 git push 别名 分支  (git push githubdemo master)
+    测试创建分支 git switch -c fenzhi1
+    测试打tag 给分支1 打tag  git tag 1.0.0
