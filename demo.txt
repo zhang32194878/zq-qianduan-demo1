@@ -36,4 +36,4 @@
     push远程仓库
 8. 从远程仓库拉取代码
     在setting中管理访问 添加合作者 会生成一个链接 对方在github中运行链接即可添加修改权限
-    在 用户新建 git init  后 使用git fetch拉取分支 t
+    在 用户新建 git init  后 使用git clone拉取分支 t
